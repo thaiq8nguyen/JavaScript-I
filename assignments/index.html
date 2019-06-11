@@ -5,14 +5,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
   <title>JS I</title>
 
-  <script src="objects.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="index.css">
+  
+
+  <!-- <script src="objects.js"></script>
   <script src="arrays.js"></script>
-  <script src="function-conversion.js"></script>
+  <script src="function-conversion.js"></script> -->
 </head>
 
 <body>
-<h1>Check your work in the console!</h1>
+  <div class="container">
+      
+      <div id="app">
+        <header>
+          <h1>Intern Look Up</h1>
+        </header>
+        <main class="main-content">
+          <section class="form-container">
+              <form @submit.prevent="findInternNameByID">
+                  <div class="input-container">
+                    <label for="intern-id">Intern ID</label>
+                    <input type="number" id="intern-id" name="intern-id" v-model="query">
+                  </div>
+                  <div class="input-container">
+                    <button type="submit">Search</button>
+                  </div>
+                  
+                  
+                </form>
+          </section>
+          <section class="result">
+            <h1>Results go here!</h1>
+            {{ result }}
+          </section>
+        </main>
+        
+        
+      </div>
+  </div>
+
+  
 </body>
+<script src="app.js"></script>
 </html>
